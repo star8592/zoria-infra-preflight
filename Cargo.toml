@@ -1,0 +1,11 @@
+[package]
+name = "zoria-infra-preflight"
+version = "0.1.0"
+edition = "2021"
+description = "Read-only Linux, NVIDIA GPU, and AI tool preflight diagnostics"
+license = "MIT"
+publish = false
+
+[[bin]]
+name = "zoria-preflight"
+path = "src/main.rs"

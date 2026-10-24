@@ -1,0 +1,7 @@
+/target/
+/tests
+/zoria-preflight
+/test_runner
+/target-old/
+**/*.log
+sample-output/Z890_readonly_preflight.md
