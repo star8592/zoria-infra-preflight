@@ -8,7 +8,8 @@ const chromeBin = process.env.CHROME_BIN || "/usr/bin/google-chrome";
 const port = 19483;
 const profile = "/tmp/zoria-visual-qa-19483";
 fs.mkdirSync(out,{recursive:true});
-function fileUrl(file){return "file://"+path.join(root,"docs",file);}
+const siteBase = process.env.ZORIA_SITE_BASE_URL || "";
+function fileUrl(file){return siteBase ? new URL(file.replace(/index\.html$/, ""),siteBase).toString() : "file://"+path.join(root,"docs",file);}
 async function main(){
  const proc=spawn(chromeBin,[
    "--headless=new","--no-sandbox","--disable-gpu","--disable-extensions",

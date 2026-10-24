@@ -34,3 +34,6 @@ Review saved screenshots: home-320.png, home-1440.png, gpu-390.png; all tested p
 The /start/ page inherits the same dark navy, warm gold and cyan VI. Three large service selectors and accessible form labels are designed for 320px and above. The content stays browser-local; no raw technical input is transmitted. The next step requires a deliberate copy and voluntary Upwork visit.
 
 CI checks the Node syntax and 8 pure-function cases. Isolated Chrome CDP visual QA verifies 11 true CSS viewport combinations plus one actual GPU form submission. Do not introduce unapproved Upwork browser automation.
+
+## Full public deployment regression
+`ZORIA_SITE_BASE_URL=https://star8592.github.io/zoria-infra-preflight/ node tools/visual-smoke.cjs . /tmp/zoria-live-smoke` tests the real public GitHub Pages URLs at 320px, 390px, 768px and 1440px rather than just local files, including a simulated GPU brief-generation interaction. Tests use a separate isolated Chrome profile and never interact with Upwork.
