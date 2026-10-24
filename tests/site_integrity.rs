@@ -49,7 +49,9 @@ fn service_pages_have_real_scopes_and_qa_metadata() {
             assert!(html.contains(required), "missing {required} on {page}");
         }
         assert_eq!(html.matches("<details>").count(), 4);
-        assert_eq!(html.matches("class=\"card\"").count(), 7);
+        assert_eq!(html.matches("class=\"tier-row\"").count(), 3);
+        assert_eq!(html.matches("class=\"step-item\"").count(), 4);
+        assert!(html.contains("site-v2.css"));
         check_refs(&page);
     }
 }
@@ -60,6 +62,8 @@ fn homepage_links_to_each_service() {
         assert!(html.contains(&format!("services/{service}/")));
     }
     assert!(html.contains("rel=\"canonical\""));
+    assert!(html.contains("Engineering you can"));
+    assert!(html.contains("hero-inner"));
     check_refs("index.html");
 }
 #[test]
@@ -73,7 +77,9 @@ fn sitemap_robots_and_responsive_styles() {
     }
     assert!(read("robots.txt")
         .contains("Sitemap: https://star8592.github.io/zoria-infra-preflight/sitemap.xml"));
-    assert!(read("assets/services.css").contains("@media(max-width:760px)"));
+    assert!(read("assets/site-v2.css").contains("@media(max-width:760px)"));
+    assert!(read("assets/site-v2.css").contains("--gold:#f6bd66"));
+    assert!(read("assets/site-v2.css").contains("--cyan:#6ccceb"));
 }
 #[test]
 fn images_exist_and_no_fabricated_review_signals() {

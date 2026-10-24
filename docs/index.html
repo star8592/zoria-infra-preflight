@@ -3,47 +3,119 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Linux, NVIDIA GPU & AI Deployment | Infrastructure Engineering</title>
-<meta name="description" content="Linux incident diagnostics, NVIDIA GPU/CUDA/PyTorch troubleshooting and reproducible AI deployment. Scoped work, safe changes and verified results.">
-<link rel="canonical" href="https://star8592.github.io/zoria-infra-preflight/"><meta name="robots" content="index,follow"><meta property="og:type" content="website"><meta property="og:title" content="Linux, NVIDIA GPU & AI Deployment | Zoria Engineering"><meta property="og:description" content="Evidence-led Linux troubleshooting, NVIDIA GPU diagnostics and reproducible AI deployment services."><meta property="og:url" content="https://star8592.github.io/zoria-infra-preflight/">
-<style>
-:root{--bg:#081526;--panel:#10283c;--line:#284458;--text:#f1f7fb;--muted:#abc3d2;--accent:#51dcc0}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(150deg,#0e314a 0%,#081526 36%,#07121f 100%);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Arial,sans-serif}a{color:inherit}
-.container{max-width:1150px;margin:0 auto;padding:0 28px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
-.brand{font-size:14px;letter-spacing:.19em;font-weight:800;color:var(--accent)}.navlink{color:var(--muted);font-size:14px;text-decoration:none}
-.hero{padding:76px 0 75px;max-width:990px}.eyebrow{color:var(--accent);font-weight:750;letter-spacing:.12em;font-size:13px}
-h1{line-height:1.1;letter-spacing:-.04em;font-size:clamp(38px,6vw,68px);margin:18px 0 20px}
-h1 span{color:var(--accent)}.lead{color:var(--muted);font-size:19px;max-width:810px;margin:0 0 28px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{display:inline-block;text-decoration:none;font-weight:740;padding:13px 19px;border-radius:11px;background:var(--accent);color:#092335}.button.secondary{color:#e6f1f7;background:#18384a;border:1px solid #395a6f}
-hr{border:0;border-top:1px solid var(--line)}.sec{margin:53px 0}h2{font-size:30px;letter-spacing:-.025em;margin:0 0 11px}.section-desc{color:var(--muted);margin:0 0 26px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}.card{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:var(--panel)}
-.card img{width:100%;aspect-ratio:4/3;display:block;object-fit:cover}.card-content{padding:23px}.card h3{font-size:20px;margin:0 0 10px;line-height:1.3}.card p{color:var(--muted);font-size:14px;min-height:85px}.price{display:block;color:var(--accent);font-size:21px;font-weight:820;margin-top:19px}.mini{font-size:12px;color:var(--muted)}
-.trust{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;border:1px solid #2c5264;padding:30px;border-radius:17px;background:#102d3f}.trust ul{padding-left:18px;color:var(--muted)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{background:#10283c;border:1px solid var(--line);border-radius:12px;padding:19px}.step .num{color:var(--accent);font-weight:800;font-size:13px}.step p{color:var(--muted);font-size:13px}
-footer{padding:40px 0;margin-top:60px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-@media(max-width:880px){.grid,.steps{grid-template-columns:1fr 1fr}.trust{grid-template-columns:1fr}.card p{min-height:0}}
-@media(max-width:580px){.grid,.steps{grid-template-columns:1fr}.container{padding:0 18px}.hero{padding:48px 0}h1{font-size:39px}}
-</style>
+<title>Linux, GPU & AI Infrastructure Engineering | Zoria</title>
+<meta name="description" content="Production-minded Linux troubleshooting, NVIDIA GPU environment diagnostics, and reproducible AI deployment. Technical evidence, clear scope, safe changes.">
+<meta name="theme-color" content="#070c17">
+<link rel="canonical" href="https://star8592.github.io/zoria-infra-preflight/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zoria | Engineering infrastructure you can trust">
+<meta property="og:description" content="Linux systems. NVIDIA GPU environments. Reproducible AI operations. Start with one scoped technical issue.">
+<meta property="og:url" content="https://star8592.github.io/zoria-infra-preflight/">
+<link rel="stylesheet" href="assets/site-v2.css">
 </head>
-<body><div class="container">
-<nav><span class="brand">ZORIA / INFRASTRUCTURE ENGINEERING</span><a class="navlink" href="https://github.com/star8592/zoria-infra-preflight">Open-source proof ↗</a></nav>
-<header class="hero">
-<div class="eyebrow">REMOTE LINUX · GPU · AI OPERATIONS</div>
-<h1>Diagnose the problem.<br><span>Verify the solution.</span></h1>
-<p class="lead">Practical infrastructure engineering for teams running Linux servers, NVIDIA GPU workloads and self-hosted AI applications. Start with one scoped task, evidence-led diagnostics, safe changes and clear handover.</p>
-<div class="actions"><a class="button" href="https://www.upwork.com/freelancers/~013b7a3a7443455b22">Discuss your project on Upwork ↗</a><a class="button secondary" href="https://github.com/star8592/zoria-infra-preflight">Review actual Rust code ↗</a></div>
-</header><hr>
-<section class="sec" id="services"><div class="eyebrow">SCOPED SERVICES</div><h2>Three ways to get started</h2><p class="section-desc">The indicative prices below are planning estimates, not live Project Catalog offers. Scope and a formal quote are agreed through Upwork.</p>
-<div class="grid">
-<article class="card"><img src="assets/linux.png" alt="Conceptual Linux server diagnostics flowchart"><div class="card-content"><h3><a href="services/linux/" style="color:inherit;text-decoration:none">Linux server diagnosis</a></h3><p>Ubuntu/CentOS issues, Nginx, systemd, networks, service health and root-cause reporting. No unapproved production changes.</p><span class="price">Indicative from $49</span><span class="mini">One clearly defined issue, with an evidence-based report.</span><p><a href="services/linux/" style="color:#5de4c7;font-weight:750">Explore service scope &amp; FAQs →</a></p></div></article>
-<article class="card"><img src="assets/gpu.png" alt="Conceptual GPU troubleshooting illustration"><div class="card-content"><h3><a href="services/gpu/" style="color:inherit;text-decoration:none">NVIDIA GPU / CUDA / PyTorch</a></h3><p>Driver and dependency compatibility, environment reproducibility, diagnostics and validation. Client supplies the required GPU compute.</p><span class="price">Indicative from $79</span><span class="mini">A version matrix and practical remediation plan.</span><p><a href="services/gpu/" style="color:#5de4c7;font-weight:750">Explore service scope &amp; FAQs →</a></p></div></article>
-<article class="card"><img src="assets/ai.png" alt="Conceptual AI workflow deployment diagram"><div class="card-content"><h3><a href="services/ai/" style="color:inherit;text-decoration:none">AI workflow deployment</a></h3><p>One agreed and lawfully licensed Linux AI or transcription workflow, smoke testing, restart/rollback notes and handover.</p><span class="price">Indicative from $99</span><span class="mini">A reproducible installation or compatibility plan.</span><p><a href="services/ai/" style="color:#5de4c7;font-weight:750">Explore service scope &amp; FAQs →</a></p></div></article>
-</div></section>
-<section class="sec trust"><div><div class="eyebrow">REAL TECHNICAL EVIDENCE</div><h2>See how the diagnostics work</h2><p class="section-desc">An openly reviewable Rust CLI inspects Linux load/memory, NVIDIA GPU inventory and AI runtime prerequisites without altering systems. Unit tests and GitHub Actions verify the code. These are our own lab examples, not customer outcomes.</p><a class="button secondary" href="https://github.com/star8592/zoria-infra-preflight">See the code, tests and tutorials ↗</a></div>
-<div><h3>What you can expect</h3><ul><li>Evidence before assumptions</li><li>Defined service scope and acceptance test</li><li>Least-privilege access and approved change windows</li><li>Reproducible verification and handover notes</li></ul></div></section>
-<section class="sec"><div class="eyebrow">DELIVERY</div><h2>A clear four-step process</h2>
-<div class="steps"><div class="step"><span class="num">01</span><h3>Scope</h3><p>Agree on the environment, failing behavior and outcome.</p></div><div class="step"><span class="num">02</span><h3>Diagnose</h3><p>Collect permitted evidence and isolate potential causes.</p></div><div class="step"><span class="num">03</span><h3>Change safely</h3><p>Apply only approved, reversible work within scope.</p></div><div class="step"><span class="num">04</span><h3>Verify</h3><p>Test the result and hand over clear documentation.</p></div></div></section>
-<section class="sec"><h2>Ready to describe your issue?</h2><p class="section-desc">Share the symptoms, software versions, a sanitized error and the outcome you need. A specific first milestone is more useful than a broad promise.</p><a class="button" href="https://www.upwork.com/freelancers/~013b7a3a7443455b22">Contact through Upwork ↗</a></section>
-<footer>Independent infrastructure engineering portfolio • Diagrams are conceptual; not employer production screenshots. All services are subject to agreed scope, applicable platform rules and lawful access.</footer>
-</div></body></html>
+<body>
+<header class="site-top">
+ <div class="wrap topline">
+  <a class="brand" href="./" aria-label="Zoria Engineering home">
+    <span class="brandmark" aria-hidden="true">Z</span>
+    <span>ZORIA <span class="submark">INFRASTRUCTURE ENGINEERING</span></span>
+  </a>
+  <nav class="toplinks" aria-label="Primary">
+   <a href="#services">Services</a><a href="#evidence">Engineering proof</a><a href="#approach">Our process</a>
+   <a class="nav-cta" href="https://www.upwork.com/freelancers/~013b7a3a7443455b22" rel="noopener">Discuss a project ↗</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+ <section class="hero">
+  <div class="wrap hero-inner">
+   <div class="hero-copy">
+    <div class="eyebrow">01 / Remote engineering services</div>
+    <h1>Complex systems.<br><em>Clear answers.</em></h1>
+    <p class="hero-lead">Production Linux, NVIDIA GPU and self-hosted AI infrastructure. We start with the evidence, define the risk and deliver a result your team can verify.</p>
+    <div class="hero-actions">
+     <a class="cta cta-primary" href="#services">Explore our services <span class="arrow" aria-hidden="true">↗</span></a>
+     <a class="cta cta-ghost" href="https://github.com/star8592/zoria-infra-preflight" rel="noopener">View technical proof <span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+    <p class="hero-footnote">Start with one well-defined issue · Authorized access only · No unapproved production changes</p>
+   </div>
+   <div class="diagram" role="img" aria-label="Illustrative engineering process: detect and isolate issues, verify a safe change, and hand over a clear result">
+    <div class="diag-top"><strong>ZORIA / ENGINEERING METHOD</strong><span class="state"><i></i> REPRODUCIBLE WORKFLOW</span></div>
+    <div class="diag-body">
+      <div class="diag-intro">from uncertainty to evidence</div>
+      <div class="diag-head">Understand. <span>Then act.</span></div>
+      <div class="flowline"><div class="flow-block"><small>01 / OBSERVE</small><b>Symptoms &amp; logs</b></div><span class="flow-connector" aria-hidden="true">→</span><div class="flow-block"><small>02 / ISOLATE</small><b>Root-cause analysis</b></div></div>
+      <div class="flowline"><div class="flow-block primary"><small>03 / CHANGE</small><b>Approved actions</b></div><span class="flow-connector" aria-hidden="true">→</span><div class="flow-block"><small>04 / VERIFY</small><b>Evidence &amp; handover</b></div></div>
+      <div class="diag-note"><span class="tiny-square" aria-hidden="true"></span><p>Each engagement has a defined outcome, a safe-change boundary and a documented result. Diagram is illustrative, not a customer deployment.</p></div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <div class="proof-strip">
+  <div class="wrap proof-inner">
+   <div class="proof-label">Our delivery principles</div>
+   <div class="proof-facts"><span><b>01</b> Evidence first</span><span><b>02</b> Reversible changes</span><span><b>03</b> Verifiable outcomes</span></div>
+  </div>
+ </div>
+
+ <section id="services" class="section">
+  <div class="wrap">
+   <div class="section-heading">
+    <div><div class="eyebrow">02 / What we do</div><h2>Focused infrastructure<br>engineering services.</h2></div>
+    <p class="intro">No vague retainer. Begin with a specific technical challenge and a practical first milestone.</p>
+   </div>
+   <div class="services-list">
+    <article class="service-row">
+      <span class="service-index">01</span>
+      <div class="service-main"><h3>Linux Server Troubleshooting</h3><p>System failures, Nginx, networking, service reliability and performance analysis. Clear diagnostics before risky configuration changes.</p><div class="chips"><span class="chip">Ubuntu / CentOS</span><span class="chip">Nginx</span><span class="chip">Operations</span></div></div>
+      <div class="service-side"><small>Indicative starting scope</small><span class="service-price">From $49</span><a class="text-link" href="services/linux/">View service details <span aria-hidden="true">↗</span></a></div>
+    </article>
+    <article class="service-row">
+      <span class="service-index">02</span>
+      <div class="service-main"><h3>NVIDIA GPU / CUDA / PyTorch</h3><p>GPU driver and framework compatibility, environment reproducibility and targeted diagnosis for Linux AI compute workloads.</p><div class="chips"><span class="chip">NVIDIA</span><span class="chip">CUDA</span><span class="chip">PyTorch</span></div></div>
+      <div class="service-side"><small>Indicative starting scope</small><span class="service-price">From $79</span><a class="text-link" href="services/gpu/">View service details <span aria-hidden="true">↗</span></a></div>
+    </article>
+    <article class="service-row">
+      <span class="service-index">03</span>
+      <div class="service-main"><h3>AI Workflow Deployment</h3><p>One licensed self-hosted AI or transcription workflow, built around repeatable installation steps, smoke tests and straightforward handover.</p><div class="chips"><span class="chip">Linux</span><span class="chip">AI Deployment</span><span class="chip">Validation</span></div></div>
+      <div class="service-side"><small>Indicative starting scope</small><span class="service-price">From $99</span><a class="text-link" href="services/ai/">View service details <span aria-hidden="true">↗</span></a></div>
+    </article>
+   </div>
+   <p class="fine">Prices are preliminary estimates, not live Upwork Project Catalog products. Final scope, timing and contract terms are confirmed through Upwork.</p>
+  </div>
+ </section>
+
+ <section id="evidence" class="section section-alt">
+  <div class="wrap two-panel">
+    <div class="proof-copy"><div class="eyebrow">03 / Proof over promises</div><h2>Engineering you can<br>actually inspect.</h2><p>Our open-source Rust preflight illustrates how we examine a Linux host, inventory NVIDIA GPU resources and check AI deployment prerequisites—without changing the system.</p><p>Review the source, reproduction steps, tests and English technical guides. This is an independently built lab example, not a client reference or performance benchmark.</p><a class="text-link" href="https://github.com/star8592/zoria-infra-preflight" rel="noopener">Explore the public Rust project <span aria-hidden="true">↗</span></a></div>
+    <div class="proof-panel" aria-label="Example of our read-only Rust command and technical verification">
+      <div class="panel-top"><span>PRE-FLIGHT / RUST</span><span>READ-ONLY</span></div>
+      <div class="command"><div><strong>$</strong> cargo test --locked</div><div>running system checks ...</div><div>Linux / GPU / AI prerequisites</div><div style="color:#6ccceb">8 local checks passed</div></div>
+      <div class="result"><span><b>✓</b> GitHub CI</span><span><b>✓</b> Open source</span><span><b>✓</b> No production changes</span></div>
+    </div>
+  </div>
+ </section>
+
+ <section id="approach" class="section">
+   <div class="wrap">
+     <div class="section-heading"><div><div class="eyebrow">04 / How we work</div><h2>A reliable process.<br>No unnecessary complexity.</h2></div><p class="intro">Designed for clear scope, traceable changes and an engineering handover—not endless open-ended debugging.</p></div>
+     <div class="method-grid">
+       <div class="method-step"><div class="method-num">01 / SCOPE</div><h3>Define the problem</h3><p>Symptoms, affected systems, goals, constraints and authorization.</p></div>
+       <div class="method-step"><div class="method-num">02 / DIAGNOSE</div><h3>Follow the evidence</h3><p>Sanitized logs, compatibility checks and repeatable reproduction.</p></div>
+       <div class="method-step"><div class="method-num">03 / REMEDIATE</div><h3>Change with care</h3><p>Agree on risk, rollback and the smallest practical correction.</p></div>
+       <div class="method-step"><div class="method-num">04 / HANDOVER</div><h3>Verify and document</h3><p>Clear test results, remaining constraints and next steps.</p></div>
+     </div>
+   </div>
+ </section>
+ <section class="final-cta">
+  <div class="wrap inner">
+   <div><div class="eyebrow">05 / Start a conversation</div><h2>Have a technical issue<br>worth solving?</h2><p>Tell us what fails, which environment you're running and what result you need. Start with a bounded milestone.</p></div>
+   <a class="cta cta-primary" href="https://www.upwork.com/freelancers/~013b7a3a7443455b22" rel="noopener">Discuss on Upwork <span aria-hidden="true">↗</span></a>
+  </div>
+ </section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 Zoria · Remote Infrastructure Engineering</span><div class="footlinks"><a href="#services">Services</a><a href="https://github.com/star8592/zoria-infra-preflight">Source &amp; tests</a><a href="https://www.upwork.com/freelancers/~013b7a3a7443455b22">Upwork profile</a></div></div></footer>
+</body>
+</html>
