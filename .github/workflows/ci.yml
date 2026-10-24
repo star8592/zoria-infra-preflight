@@ -1,0 +1,22 @@
+name: Rust quality gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - name: Format
+        run: cargo fmt --all -- --check
+      - name: Unit tests
+        run: cargo test --locked
+      - name: Clippy
+        run: cargo clippy --locked -- -D warnings
