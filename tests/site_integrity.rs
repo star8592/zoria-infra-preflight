@@ -70,7 +70,7 @@ fn homepage_links_to_each_service() {
 #[test]
 fn sitemap_robots_and_responsive_styles() {
     let xml = read("sitemap.xml");
-    assert_eq!(xml.matches("<url>").count(), 5);
+    assert_eq!(xml.matches("<url>").count(), 6);
     for s in [
         "",
         "services/linux/",
@@ -128,4 +128,24 @@ fn intake_page_is_local_only_and_accessible() {
     }
     check_refs("start/index.html");
     assert!(read("assets/brief.css").contains("@media(max-width:600px)"));
+}
+
+#[test]
+fn historical_experience_has_disclosure_and_outbound_path() {
+    let html = read("experience/index.html");
+    for evidence in [
+        "Mtime",
+        "Tumei",
+        "Bitmain",
+        "not Upwork contracts",
+        "customer testimonials",
+        "start/",
+        "upwork.com/freelancers",
+    ] {
+        assert!(
+            html.contains(evidence),
+            "experience page missing {evidence}"
+        );
+    }
+    check_refs("experience/index.html");
 }

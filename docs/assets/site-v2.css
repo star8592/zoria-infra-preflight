@@ -194,3 +194,27 @@ footer{border-top:1px solid #354358;padding:30px 0 38px;background:#070c17}
  .nav-cta{padding:9px 11px;font-size:10px!important}
 }
 .service-main{min-width:0}
+
+/* Public historical work narrative; not employer screenshots or testimonials. */
+.experience-h1{max-width:950px}.experience-h1 em{color:var(--gold);font-style:normal}
+.experience-list{border-top:1px solid #3c4f65}
+.experience-entry{display:grid;grid-template-columns:185px minmax(0,1fr);gap:40px;border-bottom:1px solid #3c4f65;padding:43px 0}
+.experience-meta{display:flex;flex-direction:column;gap:11px;padding-top:6px}
+.experience-year{font-size:19px;letter-spacing:-.02em;color:var(--gold);font-weight:800}
+.experience-type{font-size:10px;line-height:1.7;color:#98a8bc;letter-spacing:.11em;font-weight:800}
+.experience-body h3{font-size:clamp(23px,2.8vw,33px);margin:0 0 6px}
+.experience-organization{font-size:13px;color:var(--cyan);margin:0 0 22px}
+.experience-body>p:not(.experience-organization){font-size:15px;max-width:760px;line-height:1.78}
+.experience-detail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;margin-top:28px}
+.experience-detail strong{color:#f4f6fc;font-size:13px}
+.experience-detail p{font-size:12px;margin:7px 0 0;line-height:1.75}
+.experience-body .chips{margin-top:25px}
+.experience-disclosure{font-size:13px;line-height:1.75;background:#121f33;border-left:3px solid var(--gold);padding:20px 23px;margin-top:33px;color:#aebfd2}
+.experience-disclosure strong{color:var(--gold)}
+.experience-proof{padding:28px 32px;border:1px solid #34485f;border-radius:20px;background:#121e31}
+.proof-code{font:16px/1.95 ui-monospace,monospace;color:var(--gold);padding:18px 0;border-bottom:1px solid #36475b}
+.proof-code span{font-size:12px;color:var(--cyan)}
+.experience-proof ul{list-style:none;padding:17px 0 0;margin:0;display:grid;gap:11px}
+.experience-proof li{font-size:13px;color:#c0d0df}
+.experience-proof li:before{content:"✓";color:var(--gold);margin-right:10px}
+@media(max-width:760px){.experience-entry{grid-template-columns:1fr;gap:16px;padding:33px 0}.experience-meta{flex-direction:row;align-items:center;gap:17px}.experience-detail{grid-template-columns:1fr;gap:15px}.experience-h1{font-size:42px}}

@@ -48,7 +48,7 @@ async function main(){
    for(const [page,width,height] of [
      ["index.html",320,812],["index.html",390,844],["index.html",768,950],["index.html",1440,950],
      ["services/gpu/index.html",320,812],["services/gpu/index.html",390,844],["services/linux/index.html",390,844],
-     ["services/ai/index.html",390,844],["start/index.html",320,812],["start/index.html",390,844],["start/index.html",1440,900]
+     ["services/ai/index.html",390,844],["start/index.html",320,812],["start/index.html",390,844],["start/index.html",1440,900],["experience/index.html",390,844]
    ]){
      await cdp("Emulation.setDeviceMetricsOverride",{width,height,deviceScaleFactor:1,mobile:true});
      await cdp("Page.navigate",{url:fileUrl(page)});

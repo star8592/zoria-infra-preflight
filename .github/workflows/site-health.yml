@@ -18,13 +18,13 @@ jobs:
         run: |
           set -euo pipefail
           ROOT="https://star8592.github.io/zoria-infra-preflight"
-          for path in "/" "/services/linux/" "/services/gpu/" "/services/ai/" "/start/"; do
+          for path in "/" "/services/linux/" "/services/gpu/" "/services/ai/" "/start/" "/experience/"; do
             page=$(mktemp)
             curl --fail --silent --show-error --location --retry 2 --connect-timeout 8 --max-time 25 "$ROOT$path" > "$page"
             test -s "$page"
             grep -q 'upwork.com/freelancers/' "$page"
-            if [ "$path" != "/" ]; then
-              grep -q 'rel="canonical"' "$page"
+            grep -q 'rel="canonical"' "$page"
+            if [[ "$path" == /services/* ]]; then
               grep -q 'application/ld+json' "$page"
             fi
             rm -f "$page"
