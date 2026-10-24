@@ -40,3 +40,11 @@ Contact and contracting through Upwork when the client originated there; adhere 
 ## License
 
 MIT; see LICENSE.
+
+## Client project brief (private, browser-only)
+
+The static site includes a free [project brief generator](https://star8592.github.io/zoria-infra-preflight/start/) for Linux, GPU and AI deployment inquiries. It helps prospective clients describe one concrete problem, affected system versions, desired outcome and access constraints.
+
+The draft is prepared entirely in the visitor's browser with a copy button; no backend, form submission, analytics script or Upwork bot is involved. Visitors voluntarily choose whether to paste the draft into an Upwork message. Never include passwords, API keys, MFA codes or confidential records in a technical brief.
+
+Code: `docs/assets/brief.js` (pure text formatter), `docs/assets/brief-page.js` (client-side interactions), `docs/start/index.html` (accessible form). Run `node --test tests/brief.test.cjs` to verify input validation and local-only behavior. The Rust site tests verify the published site's references, and `node tools/visual-smoke.cjs . /tmp/zoria-site-qa` includes a browser form interaction check.

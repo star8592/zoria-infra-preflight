@@ -1,0 +1,49 @@
+/* Local-only client briefing: same Zoryvia unified navy/gold/cyan design tokens */
+.brief-hero{padding:75px 0 62px;background:radial-gradient(ellipse at 81% 25%,#29445c64,transparent 52%),#070c17;border-bottom:1px solid #344357}
+.brief-hero h1{margin:18px 0;max-width:850px}
+.brief-hero h1 em{font-style:normal;color:var(--gold)}
+.brief-lead{max-width:710px;font-size:18px;line-height:1.8}
+.brief-trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px}
+.brief-trust span{color:#b5c6d8;font-size:13px}
+.brief-trust strong{color:var(--gold);margin-right:7px}
+.brief-work{padding:74px 0 100px}
+.brief-grid{display:grid;grid-template-columns:minmax(0,1fr) 295px;gap:70px;align-items:start}
+.brief-form h2{font-size:36px;margin:11px 0 29px}
+.brief-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.brief-choices button{cursor:pointer;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:7px;border:1px solid #42536c;border-radius:14px;background:#111f32;color:#f6f8fb;padding:19px 15px;min-height:140px;transition:background .15s,border-color .15s}
+.brief-choices button:hover{border-color:#b78a50}
+.brief-choices button[aria-pressed=true]{background:#2b271f;border-color:var(--gold);box-shadow:inset 0 0 0 1px #f6bd6640}
+.brief-choices strong{font-size:15px;line-height:1.35}
+.brief-choices small{font-size:11px;color:#96a7bd;line-height:1.4}
+.choice-id{font-size:10px;font-weight:850;letter-spacing:.09em;color:var(--gold)}
+.brief-divider{margin-top:55px}
+.field{margin-top:25px}
+.field label{display:block;color:#eff5fb;font-size:15px;font-weight:750}
+.field p{font-size:12px;margin:7px 0 11px}
+.field :is(textarea,input){display:block;width:100%;background:#101c2e;border:1px solid #3e536e;border-radius:11px;padding:15px 17px;color:#f4f6fc;font:14px/1.6 inherit;font-family:inherit;font-size:14px;line-height:1.65;min-height:51px;resize:vertical}
+.field :is(textarea,input):focus{border-color:var(--gold);outline:2px solid #f6bd6633;outline-offset:0}
+.field :is(textarea,input)::placeholder{color:#8fa4bb}
+.field textarea{min-height:112px}
+.req,.optional{font-size:10px;font-weight:700;letter-spacing:.03em;margin-left:7px;color:var(--gold)}
+.optional{color:#98abc3}
+.brief-notice{font-size:12px;line-height:1.7;color:#b5c5d6;background:#152238;border:1px solid #364963;padding:16px 19px;border-radius:12px;margin-top:30px}
+.brief-notice strong{color:var(--gold)}
+.brief-actions{display:flex;align-items:center;gap:23px;margin-top:27px}
+.brief-actions p{font-size:12px;margin:0;max-width:320px}
+#brief-status[data-state=error]{color:#ffb8a8}
+#brief-status[data-state=success]{color:#a6dfc0}
+.brief-aside{border-left:1px solid #35495f;padding-left:28px}
+.aside-sticky{position:sticky;top:30px}
+.brief-aside h3{font-size:26px;margin:14px 0 13px}
+.brief-aside p{font-size:14px}
+.brief-aside ol{padding:0 0 0 19px;color:#c5d2e1;font-size:13px;line-height:2.3}
+.aside-callout{padding:17px;color:#d6e5ef;font-size:13px;border-left:2px solid var(--gold);background:#151f32;margin:23px 0}
+.brief-aside .text-link{font-size:12px}
+.brief-result{padding:65px 0 85px;background:#0d192a;border-top:1px solid #344961}
+.brief-result h2{margin:13px 0}
+.brief-result>div>p{font-size:14px}
+#brief-output{background:#090f1c;border:1px solid #42536d;border-radius:14px;color:#cbe6e5;padding:22px;font:13px/1.7 ui-monospace,monospace;resize:vertical;width:100%;min-height:320px}
+.result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.sr{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:860px){.brief-grid{grid-template-columns:1fr;gap:40px}.brief-aside{border-left:0;border-top:1px solid #33465d;padding:25px 0}.aside-sticky{position:static}.brief-work{padding-top:50px}}
+@media(max-width:600px){.brief-hero{padding:48px 0}.brief-hero h1{font-size:43px}.brief-lead{font-size:16px}.brief-choices{grid-template-columns:1fr}.brief-choices button{min-height:0;padding:16px}.brief-work{padding-bottom:65px}.brief-actions{flex-direction:column;align-items:stretch}.brief-actions .cta{width:100%}.brief-form h2{font-size:30px}}

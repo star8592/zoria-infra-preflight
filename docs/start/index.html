@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prepare a Linux, GPU or AI Engineering Project Brief | Zoria</title>
+<meta name="description" content="Turn a Linux server issue, NVIDIA GPU error or AI deployment request into a clear scope and technical project brief. Free, private and no account needed.">
+<meta name="theme-color" content="#070c17">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://star8592.github.io/zoria-infra-preflight/start/">
+<meta property="og:type" content="website"><meta property="og:title" content="Start with a clear technical problem | Zoria">
+<meta property="og:description" content="Describe your Linux, GPU or AI issue and prepare a structured brief without sharing data with our server.">
+<meta property="og:url" content="https://star8592.github.io/zoria-infra-preflight/start/">
+<link rel="stylesheet" href="../assets/site-v2.css">
+<link rel="stylesheet" href="../assets/brief.css">
+<script defer src="../assets/brief.js"></script>
+<script defer src="../assets/brief-page.js"></script>
+</head><body>
+<header class="site-top"><div class="wrap topline">
+<a class="brand" href="../"><span class="brandmark" aria-hidden="true">Z</span><span>ZORIA<span class="submark">INFRASTRUCTURE ENGINEERING</span></span></a>
+<nav class="toplinks" aria-label="Primary"><a href="../#services">Services</a><a href="../#evidence">Proof</a><a href="../#approach">Our process</a><a class="nav-cta" href="https://www.upwork.com/freelancers/~013b7a3a7443455b22" rel="noopener">Upwork profile ↗</a></nav>
+</div></header>
+<main>
+<section class="brief-hero"><div class="wrap"><div class="eyebrow">Zoria / A better first conversation</div>
+<h1>Start with a<br><em>clear technical brief.</em></h1>
+<p class="brief-lead">Get from “something is broken” to a scope your engineer can evaluate. Five minutes of context can save several rounds of messages.</p>
+<div class="brief-trust"><span><strong>01</strong> No account</span><span><strong>02</strong> No payment</span><span><strong>03</strong> No data upload</span></div>
+</div></section>
+<section class="brief-work"><div class="wrap brief-grid">
+<form id="brief-form" class="brief-form" novalidate>
+<div class="eyebrow">Step 01 / Choose the area</div>
+<h2>What do you need help with?</h2>
+<div class="brief-choices" role="group" aria-label="Choose a service">
+<button type="button" data-select-service="linux" aria-pressed="true"><span class="choice-id">01 / LINUX</span><strong>Server troubleshooting</strong><small>Systems, Nginx, service outages</small></button>
+<button type="button" data-select-service="gpu" aria-pressed="false"><span class="choice-id">02 / GPU</span><strong>CUDA &amp; PyTorch</strong><small>NVIDIA driver and runtime issues</small></button>
+<button type="button" data-select-service="ai" aria-pressed="false"><span class="choice-id">03 / AI</span><strong>Workflow deployment</strong><small>Install, validate and hand over</small></button>
+</div>
+<label class="sr" for="service">Selected service</label>
+<select id="service" name="service" class="sr" aria-label="Selected service"><option value="linux">Linux server diagnosis</option><option value="gpu">NVIDIA GPU / CUDA / PyTorch</option><option value="ai">AI workflow deployment</option></select>
+<div class="brief-divider"><div class="eyebrow">Step 02 / Tell us enough to diagnose</div><h2>Describe the work.</h2></div>
+<div class="field">
+<label for="problem">What isn't working? <span class="req">Required</span></label>
+<p>Give a specific symptom or error, when it occurs, and the impact.</p>
+<textarea name="problem" id="problem" rows="4" maxlength="1800" placeholder="Example: After upgrading our Ubuntu server, Nginx intermittently returns 502 for our API. The error started on Thursday after a deployment. We have sanitized logs." required></textarea>
+</div>
+<div class="field">
+<label for="environment">System or software environment <span class="req">Required</span></label>
+<p>Versions, operating system, hardware or deployment setup.</p>
+<input type="text" name="environment" id="environment" maxlength="900" placeholder="Ubuntu 24.04, Nginx 1.26, 1 VM / RTX GPU model / Python &amp; CUDA versions" required>
+</div>
+<div class="field">
+<label for="outcome">What would count as success? <span class="req">Required</span></label>
+<p>One objective result an engineer could verify.</p>
+<textarea name="outcome" id="outcome" rows="3" maxlength="900" placeholder="Example: API requests return 200 consistently and Nginx reload completes without errors." required></textarea>
+</div>
+<div class="field">
+<label for="constraints">Constraints and timeline <span class="optional">Optional</span></label>
+<p>Production restrictions, backup window, hosting fees or a preferred deadline.</p>
+<textarea name="constraints" id="constraints" rows="3" maxlength="900" placeholder="Example: Read-only diagnosis first. Changes require approval; test environment is available."></textarea>
+</div>
+<div class="brief-notice"><strong>Keep secrets out.</strong> Do not include passwords, MFA codes, API tokens, customer personal data or internal credentials. You choose what to send when contacting an engineer.</div>
+<div class="brief-actions"><button class="cta cta-primary" type="submit">Prepare my brief <span class="arrow" aria-hidden="true">↗</span></button><p id="brief-status" aria-live="polite">Nothing is submitted by this form. Your draft stays in this browser.</p></div>
+</form>
+<aside class="brief-aside"><div class="aside-sticky">
+<div class="eyebrow">The result</div><h3>A better quote starts here.</h3>
+<p>We'll turn your answers into a concise English project description with five parts:</p>
+<ol><li>Problem and impact</li><li>System and versions</li><li>Measurable success criterion</li><li>Constraints and timing</li><li>Proposed first milestone</li></ol>
+<div class="aside-callout">No backend. No analytics. No external transmission. Only you decide whether to share your brief.</div>
+<a class="text-link" href="https://github.com/star8592/zoria-infra-preflight">Review our public engineering code <span aria-hidden="true">↗</span></a>
+</div></aside>
+</div></section>
+<section id="brief-result" class="brief-result" hidden><div class="wrap"><div class="eyebrow">Your prepared project brief</div><h2>Review, copy, and send.</h2>
+<p>This is a draft, not a submitted job, contract or quotation. Confirm it contains no sensitive information.</p>
+<label class="sr" for="brief-output">Your copy-ready technical project brief</label>
+<textarea id="brief-output" rows="16" readonly spellcheck="false"></textarea>
+<div class="result-actions"><button type="button" id="copy-brief" class="cta cta-primary">Copy project brief <span class="arrow" aria-hidden="true">↗</span></button>
+<a href="https://www.upwork.com/freelancers/~013b7a3a7443455b22" class="cta cta-ghost" rel="noopener" target="_blank">Open Upwork profile ↗</a></div>
+<p class="fine">Upwork may require you to sign in or complete account eligibility steps before sending. This page cannot submit messages or buy Connects.</p>
+</div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 Zoria · Independent infrastructure engineering · Privacy-first client briefing</span><div class="footlinks"><a href="../">Services</a><a href="../services/linux/">Linux</a><a href="../services/gpu/">GPU</a><a href="../services/ai/">AI</a></div></div></footer>
+</body></html>

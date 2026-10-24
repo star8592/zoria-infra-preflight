@@ -48,7 +48,7 @@ async function main(){
    for(const [page,width,height] of [
      ["index.html",320,812],["index.html",390,844],["index.html",768,950],["index.html",1440,950],
      ["services/gpu/index.html",320,812],["services/gpu/index.html",390,844],["services/linux/index.html",390,844],
-     ["services/ai/index.html",390,844]
+     ["services/ai/index.html",390,844],["start/index.html",320,812],["start/index.html",390,844],["start/index.html",1440,900]
    ]){
      await cdp("Emulation.setDeviceMetricsOverride",{width,height,deviceScaleFactor:1,mobile:true});
      await cdp("Page.navigate",{url:fileUrl(page)});
@@ -66,6 +66,15 @@ async function main(){
        fs.writeFileSync(path.join(out,filename),Buffer.from(ss.data,"base64"));
      }
    }
+   await cdp("Emulation.setDeviceMetricsOverride",{width:390,height:844,deviceScaleFactor:1,mobile:true});
+   await cdp("Page.navigate",{url:fileUrl("start/index.html")+"?service=gpu"});
+   await sleep(450);
+   const ui=await cdp("Runtime.evaluate",{expression:"(()=>{const f=document.getElementById('brief-form');if(!f)return {error:'missing form'};const selected=document.getElementById('service').value;f.elements.namedItem('problem').value='After a driver update our GPU workload fails with a CUDA initialization error.';f.elements.namedItem('environment').value='Ubuntu 24.04, NVIDIA GPU, CUDA and PyTorch';f.elements.namedItem('outcome').value='The GPU smoke test succeeds consistently';f.requestSubmit();return {selected,visible:!document.getElementById('brief-result').hidden,hasOutput:document.getElementById('brief-output').value.includes('PROJECT BRIEF'),hasError:document.getElementById('brief-status').dataset.state==='error'};})()",returnByValue:true});
+   const uiv=ui.result?.value||{};
+   console.log("BRIEF_UI",JSON.stringify(uiv));
+   if(uiv.selected!=="gpu"||!uiv.visible||!uiv.hasOutput||uiv.hasError)throw new Error("project brief UI failed "+JSON.stringify(uiv));
+   const screenshot=await cdp("Page.captureScreenshot",{format:"png",captureBeyondViewport:false});
+   fs.writeFileSync(path.join(out,"brief-390.png"),Buffer.from(screenshot.data,"base64"));
    fs.writeFileSync(path.join(out,"layout-report.json"),JSON.stringify(reports,null,2));
    console.log("PASS: "+reports.length+" real CDP viewport checks (320/390/768/1440), no horizontal overflow");
  }finally{

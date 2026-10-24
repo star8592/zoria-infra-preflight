@@ -23,7 +23,8 @@ fn check_refs(page: &str) {
         .chain(local_refs(&html, "src"))
     {
         assert!(
-            dir.join(href.split('#').next().unwrap_or("")).exists(),
+            dir.join(href.split(&['?', '#'][..]).next().unwrap_or(""))
+                .exists(),
             "broken link {href} in {page}"
         );
     }
@@ -69,8 +70,14 @@ fn homepage_links_to_each_service() {
 #[test]
 fn sitemap_robots_and_responsive_styles() {
     let xml = read("sitemap.xml");
-    assert_eq!(xml.matches("<url>").count(), 4);
-    for s in ["", "services/linux/", "services/gpu/", "services/ai/"] {
+    assert_eq!(xml.matches("<url>").count(), 5);
+    for s in [
+        "",
+        "services/linux/",
+        "services/gpu/",
+        "services/ai/",
+        "start/",
+    ] {
         assert!(xml.contains(&format!(
             "https://star8592.github.io/zoria-infra-preflight/{s}"
         )));
@@ -97,4 +104,28 @@ fn images_exist_and_no_fabricated_review_signals() {
         let html = read(p);
         assert!(!html.contains("AggregateRating") && !html.contains("100% guaranteed"));
     }
+}
+
+#[test]
+fn intake_page_is_local_only_and_accessible() {
+    let html = read("start/index.html");
+    for element in [
+        "id=\"brief-form\"",
+        "id=\"brief-output\"",
+        "id=\"copy-brief\"",
+        "name=\"problem\"",
+        "name=\"environment\"",
+        "name=\"outcome\"",
+        "aria-live=\"polite\"",
+        "Nothing is submitted",
+    ] {
+        assert!(html.contains(element), "missing {element}");
+    }
+    for service in ["linux", "gpu", "ai"] {
+        assert!(html.contains(&format!("data-select-service=\"{service}\"")));
+        let page = read(&format!("services/{service}/index.html"));
+        assert!(page.contains(&format!("../../start/?service={service}")));
+    }
+    check_refs("start/index.html");
+    assert!(read("assets/brief.css").contains("@media(max-width:600px)"));
 }

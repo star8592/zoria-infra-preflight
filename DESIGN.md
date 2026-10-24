@@ -29,3 +29,8 @@ Review saved screenshots: home-320.png, home-1440.png, gpu-390.png; all tested p
 - Unverified performance or customer KPIs; arbitrary green/blue themes that conflict with Zoryvia VI.
 - Repeated identical cards or excessive bordered boxes; image-heavy placeholders that look like fake product photos.
 - Shipping a page whose CSS or required links have not passed local and public readback checks.
+
+## Client intake page
+The /start/ page inherits the same dark navy, warm gold and cyan VI. Three large service selectors and accessible form labels are designed for 320px and above. The content stays browser-local; no raw technical input is transmitted. The next step requires a deliberate copy and voluntary Upwork visit.
+
+CI checks the Node syntax and 8 pure-function cases. Isolated Chrome CDP visual QA verifies 11 true CSS viewport combinations plus one actual GPU form submission. Do not introduce unapproved Upwork browser automation.

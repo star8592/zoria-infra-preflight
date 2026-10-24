@@ -18,5 +18,10 @@ jobs:
         run: cargo fmt --all -- --check
       - name: Unit tests
         run: cargo test --locked
+      - name: Frontend briefing tests
+        run: |
+          node --check docs/assets/brief.js
+          node --check docs/assets/brief-page.js
+          node --test tests/brief.test.cjs
       - name: Clippy
         run: cargo clippy --all-targets --locked -- -D warnings
